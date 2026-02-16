@@ -2,673 +2,834 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <title>Florium – Luxe mobilhome voor 2 personen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Florium – Luxe mobilhome voor 2 personen</title>
   <meta name="description" content="Luxe mobilhome voor 2 personen met automaat en grote garage voor fietsen. Vertrek vanuit Herentals en ervaar vrijheid, ruimte en sportieve vakanties. Te boeken via Goboony." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    :root {
-      --bg: #fdf7f0;
-      --accent: #ff8055;
-      --accent-dark: #e76035;
-      --text: #111827;
-      --muted: #6b7280;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1220;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.10);
+      --stroke: rgba(255,255,255,.14);
+
+      --text:#F6F7FB;
+      --muted: rgba(246,247,251,.72);
+
+      --sun:#FFB15A;
+      --sun2:#FF6A3D;
+      --sea:#3EC5FF;
+      --mint:#6BF3C1;
+
+      --shadow: 0 30px 80px rgba(0,0,0,.35);
+      --shadow2: 0 18px 40px rgba(0,0,0,.25);
+
+      --radius: 18px;
+      --radius2: 24px;
+
+      --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top, #ffe7d3 0, #fdf7f0 40%, #f3f4ff 100%);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(255,177,90,.35), transparent 55%),
+        radial-gradient(900px 500px at 10% 5%, rgba(62,197,255,.22), transparent 60%),
+        radial-gradient(800px 500px at 85% 35%, rgba(107,243,193,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 55%, #070A12 100%);
+      overflow-x:hidden;
     }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 20px; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* NAV */
+    header{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-
-    img {
-      max-width: 100%;
-      display: block;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
     }
-
-    /* NAVBAR */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: rgba(253, 247, 240, 0.9);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 220px;
     }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+    .brand-mark{
+      width: 38px; height: 38px; border-radius: 14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.32), transparent 42%),
+        linear-gradient(135deg, rgba(255,177,90,.95), rgba(255,106,61,.95));
+      box-shadow: 0 12px 30px rgba(255,106,61,.25);
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+    .brand-name{
+      display:flex; flex-direction:column; line-height:1.05;
     }
+    .brand-name strong{ font-size:.98rem; letter-spacing:.08em; text-transform:uppercase; }
+    .brand-name span{ font-size:.78rem; color: var(--muted); }
 
-    .logo {
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .nav-links{
+      display:flex; gap: 18px; align-items:center;
+      color: rgba(246,247,251,.78);
+      font-size: .92rem;
     }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      padding: 0.2rem 0;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.25rem;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.18s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    .nav-links a{
+      padding: 8px 10px;
       border-radius: 999px;
-      padding: 0.55rem 1.25rem;
-      font-size: 0.86rem;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 12px 24px rgba(248, 113, 73, 0.35);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .nav-links a:hover{
+      background: rgba(255,255,255,.08);
+      transform: translateY(-1px);
+    }
+
+    .actions{ display:flex; gap: 10px; align-items:center; }
+    .btn{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: .92rem;
+      display:inline-flex; align-items:center; gap: 10px;
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
       white-space: nowrap;
     }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.20); }
+    .btn-primary{
+      border: 0;
+      background: linear-gradient(135deg, rgba(255,177,90,.98), rgba(255,106,61,.98));
+      box-shadow: 0 18px 50px rgba(255,106,61,.28);
+    }
+    .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    .btn .icon{ font-size: 1.1rem; }
 
-    .btn-primary span {
-      font-size: 1rem;
+    /* HERO */
+    .hero{
+      padding: 24px 0 10px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: stretch;
+      margin-top: 22px;
     }
 
-    .btn-outline {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 0.5rem 1.05rem;
-      font-size: 0.8rem;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.8);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      cursor: pointer;
-    }
-
-    /* LAYOUT */
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.6rem 1.25rem 3.2rem;
-    }
-
-    section {
-      margin-top: 2.4rem;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    /* HERO TOP */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 2.2rem;
-      margin-top: 2rem;
-      align-items: flex-start;
-    }
-
-    .hero-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      color: var(--accent-dark);
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 4vw, 2.7rem);
-      line-height: 1.05;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1.3rem;
-      max-width: 32rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.3rem;
-      font-size: 0.8rem;
-    }
-
-    .tag {
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(229, 231, 235, 0.9);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.4rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
-
-    .hero-meta strong {
-      color: var(--text);
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    .hero-cta-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* HERO IMAGES + BOOKING CARD */
-
-    .hero-right {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .hero-photos {
-      display: grid;
-      grid-template-columns: 1.4fr 1.1fr;
-      gap: 0.6rem;
-    }
-
-    .hero-photo-main,
-    .hero-photo-side {
-      border-radius: 1rem;
-      overflow: hidden;
-      background: #000;
+    .hero-left{
       position: relative;
+      border-radius: var(--radius2);
+      overflow: hidden;
+      min-height: 520px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(7,10,18,.25), rgba(7,10,18,.68) 70%),
+        url("img/florium-hero.jpg") center/cover no-repeat;
+    }
+    .hero-left::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(900px 450px at 22% 18%, rgba(255,177,90,.55), transparent 55%),
+        radial-gradient(650px 380px at 68% 28%, rgba(62,197,255,.22), transparent 58%),
+        radial-gradient(700px 420px at 70% 72%, rgba(255,106,61,.18), transparent 60%);
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    .hero-content{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding: 34px 32px;
+      gap: 14px;
     }
 
-    .hero-photo-main img,
-    .hero-photo-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size: .82rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(246,247,251,.86);
     }
-
-    .hero-photo-main {
-      min-height: 200px;
+    .kicker .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, rgba(255,177,90,1), rgba(255,106,61,1));
+      box-shadow: 0 10px 25px rgba(255,106,61,.35);
     }
-
-    .hero-photo-side {
-      min-height: 200px;
+    h1{
+      margin:0;
+      font-size: clamp(2.2rem, 4.5vw, 3.35rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
     }
-
-    .hero-photo-badge {
-      position: absolute;
-      left: 0.75rem;
-      top: 0.75rem;
-      background: rgba(17, 24, 39, 0.82);
-      color: #f9fafb;
-      padding: 0.28rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .hero-photo-badge span {
-      font-size: 0.9rem;
-    }
-
-    .booking-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 1rem;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid rgba(229, 231, 235, 0.95);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
-      font-size: 0.85rem;
-    }
-
-    .booking-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.4rem;
-    }
-
-    .price {
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .price span {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-left: 0.15rem;
-    }
-
-    .booking-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 0.7rem;
-    }
-
-    .booking-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
-    }
-
-    .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: #d1d5db;
-      display: inline-block;
-      margin: 0 0.35rem;
-    }
-
-    /* SECTIONS */
-
-    .two-cols {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-      margin-top: 1.6rem;
-    }
-
-    .section-text {
-      font-size: 0.95rem;
-      color: var(--muted);
+    .lead{
+      margin:0;
+      color: rgba(246,247,251,.80);
+      font-size: 1.02rem;
+      max-width: 38rem;
       line-height: 1.6;
     }
 
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.7rem;
-      font-size: 0.8rem;
+    .chips{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      margin-top: 6px;
     }
-
-    .pill-soft {
+    .chip{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 10px 12px;
       border-radius: 999px;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid rgba(209, 213, 219, 0.95);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(246,247,251,.88);
+      font-size: .90rem;
+      backdrop-filter: blur(10px);
+    }
+    .chip .emoji{ filter: saturate(1.1); }
+    .hero-cta{
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center;
+      margin-top: 10px;
+    }
+    .hero-note{
+      color: rgba(246,247,251,.65);
+      font-size: .90rem;
     }
 
-    .info-card {
-      background: #ffffff;
-      border-radius: 1rem;
-      padding: 1.2rem 1.2rem;
-      border: 1px solid rgba(229, 231, 235, 0.95);
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
-      font-size: 0.9rem;
+    /* RIGHT COLUMN */
+    .hero-right{
+      display:grid;
+      grid-template-rows: 1fr auto;
+      gap: 14px;
+      min-height: 520px;
+    }
+    .panel{
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
     }
 
-    .info-card h3 {
+    .photo-stack{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px;
+      height: 100%;
+    }
+    .ph{
+      position:relative;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      min-height: 210px;
+      cursor: pointer;
+    }
+    .ph img{ width:100%; height:100%; object-fit: cover; }
+    .ph::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.35));
+      pointer-events:none;
+      opacity:.9;
+    }
+    .ph-label{
+      position:absolute; left:14px; bottom:12px;
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size:.86rem;
+      color: rgba(246,247,251,.92);
+      background: rgba(7,10,18,.55);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      z-index: 2;
+    }
+
+    .book{
+      padding: 16px 16px 18px;
+    }
+    .book-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+      margin-bottom: 8px;
+    }
+    .book-title{
+      margin:0;
+      font-size: 1.05rem;
+      letter-spacing: -.01em;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: .86rem;
+      background: rgba(255,177,90,.14);
+      border: 1px solid rgba(255,177,90,.25);
+      color: rgba(255,230,200,.95);
+      white-space: nowrap;
+    }
+    .book p{
+      margin: 8px 0 12px;
+      color: rgba(246,247,251,.72);
+      line-height: 1.55;
+      font-size: .95rem;
+    }
+    .facts{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0 14px;
+    }
+    .fact{
+      border-radius: 16px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(246,247,251,.78);
+      font-size: .90rem;
+    }
+    .fact strong{ display:block; color: rgba(246,247,251,.92); font-weight: 600; margin-bottom: 2px; }
+
+    /* SECTIONS */
+    main{ padding-bottom: 60px; }
+    section{ margin-top: 42px; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 18px;
+      margin-bottom: 16px;
+    }
+    h2{
+      margin:0;
+      font-size: 1.55rem;
+      letter-spacing: -.02em;
+    }
+    .sub{
+      margin:0;
+      color: rgba(246,247,251,.70);
+      max-width: 44rem;
+      line-height: 1.6;
       font-size: 1rem;
-      margin-bottom: 0.4rem;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 16px;
+      align-items:start;
     }
 
-    .info-list {
-      margin: 0.6rem 0 0;
-      padding-left: 1rem;
-      color: var(--muted);
-      font-size: 0.88rem;
+    .card{
+      border-radius: var(--radius2);
+      padding: 18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: -.01em;
+    }
+    .card p{
+      margin:0;
+      color: rgba(246,247,251,.72);
+      line-height: 1.65;
+      font-size: .98rem;
     }
 
-    .info-list li {
-      margin-bottom: 0.35rem;
+    .list{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
     }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1.1rem;
+    .li{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
     }
-
-    .gallery img {
-      border-radius: 0.9rem;
-      height: 160px;
-      object-fit: cover;
+    .li .b{
+      width: 36px; height: 36px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(62,197,255,.22), rgba(107,243,193,.18));
+      border: 1px solid rgba(255,255,255,.10);
+      flex: 0 0 auto;
     }
+    .li strong{ display:block; margin-bottom: 2px; }
+    .li span{ color: rgba(246,247,251,.72); line-height: 1.55; font-size: .95rem; }
 
-    /* CTA */
-
-    .cta {
-      margin-top: 3rem;
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
     }
+    .g{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      position:relative;
+      min-height: 190px;
+      transition: transform .18s ease;
+    }
+    .g:hover{ transform: translateY(-2px); }
+    .g img{ width:100%; height:100%; object-fit: cover; }
+    .g::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.35));
+      pointer-events:none;
+    }
+    .g1{ grid-column: span 7; }
+    .g2{ grid-column: span 5; }
+    .g3{ grid-column: span 4; }
+    .g4{ grid-column: span 4; }
+    .g5{ grid-column: span 4; }
 
-    .cta-inner {
-      border-radius: 1.4rem;
-      background: linear-gradient(135deg, #111827, #020617);
-      color: #e5e7eb;
-      padding: 1.6rem 1.5rem;
-      display: flex;
+    /* CTA STRIP */
+    .cta{
+      margin-top: 44px;
+      border-radius: 28px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(900px 420px at 20% 20%, rgba(255,177,90,.25), transparent 60%),
+        radial-gradient(900px 420px at 80% 25%, rgba(62,197,255,.18), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+    }
+    .cta-inner{
+      padding: 22px 20px;
+      display:flex; align-items:center; justify-content:space-between; gap: 18px;
       flex-wrap: wrap;
-      gap: 1.3rem;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
     }
-
-    .cta-inner p {
-      margin: 0.3rem 0 0.7rem;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      max-width: 28rem;
-    }
+    .cta h3{ margin:0; font-size: 1.25rem; letter-spacing: -.01em; }
+    .cta p{ margin:6px 0 0; color: rgba(246,247,251,.72); max-width: 52ch; line-height:1.6; }
 
     /* FOOTER */
-
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.6rem 1.25rem 2.4rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      justify-content: space-between;
-      border-top: 1px solid rgba(229, 231, 235, 0.9);
-      margin-top: 2rem;
+    footer{
+      margin-top: 54px;
+      padding: 24px 0 36px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(246,247,251,.62);
+      font-size: .90rem;
     }
+    .foot{
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed; inset:0; z-index:1000;
+      background: rgba(0,0,0,.72);
+      display:none;
+      place-items:center;
+      padding: 22px;
+    }
+    .lightbox.open{ display:grid; }
+    .lightbox-inner{
+      width:min(1100px, 100%);
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(10,14,25,.85);
+      box-shadow: 0 40px 120px rgba(0,0,0,.6);
+      position:relative;
+    }
+    .lightbox img{
+      width:100%;
+      height: min(78vh, 720px);
+      object-fit: contain;
+      background: rgba(0,0,0,.2);
+      display:block;
+    }
+    .lb-close{
+      position:absolute; top: 12px; right: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 12px;
+      cursor:pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    /* SMALL ANIMATIONS */
+    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
+    .reveal.on{ opacity:1; transform: translateY(0); }
 
     /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .two-cols {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-right{ min-height: unset; }
+      .hero-left{ min-height: 520px; }
+      .facts{ grid-template-columns: 1fr 1fr; }
     }
-
-    @media (max-width: 640px) {
-      main {
-        padding: 1.2rem 1rem 2.6rem;
-      }
-      .hero {
-        margin-top: 1.5rem;
-      }
-      .cta-inner {
-        padding: 1.4rem 1.3rem;
-      }
+    @media (max-width: 720px){
+      .nav-links{ display:none; }
+      .brand{ min-width: unset; }
+      .hero-content{ padding: 26px 20px; }
+      .lead{ font-size: 1rem; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: repeat(6, 1fr); }
+      .g1{ grid-column: span 6; }
+      .g2{ grid-column: span 6; }
+      .g3,.g4,.g5{ grid-column: span 6; }
+      .facts{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
 <header>
-  <nav class="nav">
-    <div class="nav-left">
-      <div class="logo">Florium <span>Herentals</span></div>
-      <div class="nav-links">
-        <a href="#over">Over de mobilhome</a>
-        <a href="#gevoel">Vakantiegevoel</a>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Florium home">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-name">
+          <strong>Florium</strong>
+          <span>Herentals • luxe mobilhome voor 2</span>
+        </div>
+      </a>
+
+      <div class="nav-links" aria-label="Hoofdnavigatie">
+        <a href="#over">Mobilhome</a>
+        <a href="#gevoel">Beleving</a>
         <a href="#praktisch">Praktisch</a>
+        <a href="#foto">Foto’s</a>
       </div>
-    </div>
-    <a class="btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
-      Boek via Goboony <span>➜</span>
-    </a>
-  </nav>
+
+      <div class="actions">
+        <button class="btn" type="button" onclick="document.getElementById('praktisch').scrollIntoView({behavior:'smooth'})">
+          <span class="icon">☀️</span> Hoe werkt huren?
+        </button>
+        <a class="btn btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
+          <span class="icon">➜</span> Boek via Goboony
+        </a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<main>
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div>
-      <p class="hero-kicker">Luxe mobilhome voor twee</p>
-      <h1>Word wakker waar je wil, met je <span>fietsen</span> in de garage.</h1>
-      <p class="hero-sub">
-        Een compacte luxesuite op wielen: automaat, grote garage voor (elektrische) fietsen en alles wat je nodig hebt om rustig door Europa te trekken. Vertrek gewoon vanuit Herentals.
-      </p>
+<main class="container hero" id="top">
+  <div class="hero-grid">
+    <!-- LEFT: BIG FEELING -->
+    <section class="hero-left" aria-label="Hero">
+      <div class="hero-content">
+        <div class="kicker"><span class="dot"></span> vrijheid • zon • ruimte</div>
+        <h1>Word wakker waar je wil — met je <span style="color:var(--sun);">fietsen</span> veilig in de garage.</h1>
+        <p class="lead">
+          Een compacte luxesuite op wielen: automaat, veel opbergruimte, en klaar voor roadtrips, slow travel en sportieve vakanties.
+          Vertrek gewoon vanuit Herentals.
+        </p>
 
-      <div class="hero-tags">
-        <div class="tag">🚐 2 personen – luxe klasse</div>
-        <div class="tag">⚙️ Automatische versnellingsbak</div>
-        <div class="tag">🚲 Grote fietsgarage</div>
-        <div class="tag">🌄 Ideaal voor roadtrips & fietsvakanties</div>
+        <div class="chips" aria-label="Highlights">
+          <div class="chip"><span class="emoji">🚐</span> Voor 2 personen • luxe comfort</div>
+          <div class="chip"><span class="emoji">⚙️</span> Automaat • relaxed rijden</div>
+          <div class="chip"><span class="emoji">🚲</span> Grote fietsgarage (ook e-bikes)</div>
+          <div class="chip"><span class="emoji">🌅</span> Zonsondergang-plekken • elke dag anders</div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
+            <span class="icon">🗓️</span> Prijzen & kalender
+          </a>
+          <a class="btn" href="#foto">
+            <span class="icon">📷</span> Bekijk foto’s
+          </a>
+          <span class="hero-note">Boeking, verzekering & waarborg lopen veilig via Goboony.</span>
+        </div>
       </div>
+    </section>
 
-      <div class="hero-cta-row">
-        <a class="btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
-          Bekijk prijzen & kalender <span>➜</span>
-        </a>
-        <button class="btn-outline" type="button" onclick="document.getElementById('praktisch').scrollIntoView({behavior:'smooth'})">
-          Hoe werkt huren?
-        </button>
-      </div>
-
-      <div class="hero-meta">
-        <div><strong>Vertrek:</strong> Herentals, België</div>
-        <div><strong>Perfect voor:</strong> koppels, fietsvakanties, slow travel</div>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="hero-photos">
-        <div class="hero-photo-main">
-          <!-- VERVANG DOOR JE ECHTE FOTO -->
-          <img src="img/florium-buiten.jpg" alt="Florium mobilhome geparkeerd in de natuur bij zonsondergang" />
-          <div class="hero-photo-badge">
-            <span>★</span> Wakker worden met uitzicht
+    <!-- RIGHT: PHOTO + BOOKING -->
+    <aside class="hero-right" aria-label="Foto's en boeking">
+      <div class="panel">
+        <div class="photo-stack">
+          <div class="ph" data-lb="img/florium-interieur.jpg" role="button" tabindex="0" aria-label="Open interieurfoto">
+            <img src="img/florium-interieur.jpg" alt="Interieur van de mobilhome met zithoek en keuken" />
+            <div class="ph-label">✨ Interieur</div>
+          </div>
+          <div class="ph" data-lb="img/florium-buiten.jpg" role="button" tabindex="0" aria-label="Open buitenfoto">
+            <img src="img/florium-buiten.jpg" alt="Florium mobilhome geparkeerd in de natuur" />
+            <div class="ph-label">🌄 Buiten</div>
           </div>
         </div>
-        <div class="hero-photo-side">
-          <!-- VERVANG DOOR JE ECHTE FOTO -->
-          <img src="img/florium-interieur.jpg" alt="Interieur van de mobilhome met zithoek en keuken" />
-        </div>
       </div>
 
-      <div class="booking-card">
-        <div class="booking-top">
+      <div class="panel book">
+        <div class="book-top">
           <div>
-            <div class="price">vanaf €… <span>per nacht (zie Goboony)</span></div>
-            <div class="booking-note">
-              Exacte prijzen, kortingen en beschikbaarheid staan live op Goboony.
-            </div>
+            <h2 class="book-title">Snel boeken, zonder gedoe</h2>
+            <p style="margin:6px 0 0;color:rgba(246,247,251,.70);font-size:.95rem;">
+              Alles (betaling, verzekering, waarborg) netjes via het platform.
+            </p>
           </div>
+          <div class="badge">⭐︎ Premium ervaring</div>
         </div>
-        <a class="btn-primary" style="width:100%;justify-content:center;margin-bottom:0.4rem;" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
-          Boek via Goboony <span>➜</span>
+
+        <div class="facts">
+          <div class="fact"><strong>Vertrek</strong>Herentals (BE)</div>
+          <div class="fact"><strong>Ideaal voor</strong>Koppels & fietsers</div>
+          <div class="fact"><strong>Rijden</strong>Automaat</div>
+          <div class="fact"><strong>Garage</strong>Ruim & afsluitbaar</div>
+        </div>
+
+        <a class="btn btn-primary" style="width:100%;justify-content:center;" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
+          <span class="icon">➜</span> Naar de Goboony-pagina
         </a>
-        <div class="booking-meta">
-          <div>✔ Betaling & waarborg via Goboony</div>
-          <div><span class="dot"></span></div>
-          <div>✔ Verzekering via Goboony</div>
-        </div>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 
   <!-- OVER -->
-  <section id="over">
-    <h2>Over de mobilhome</h2>
-    <div class="two-cols">
-      <div class="section-text">
+  <section id="over" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Mobilhome met “hotelgevoel”</h2>
+        <p class="sub">Warm, rustig en compleet. Alles aanwezig om meteen in vakantiemodus te schieten — zonder in te boeten op comfort.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Comfort dat je voelt</h3>
         <p>
-          Deze Florium is gebouwd voor twee. Binnen heb je een gezellige zithoek, een goed bed, een volwaardige keuken en badkamer met douche. Buiten heb je ruimte om meteen wat stoelen neer te zetten en van je uitzicht te genieten.
+          Denk: goede nachtrust, volwaardige keuken, badkamer met douche, verwarming en warm water.
+          Compact genoeg om vlot te rijden — ruim genoeg om echt te ontspannen.
         </p>
-        <p>
-          De automatische versnellingsbak en het compacte formaat maken het rijden heel ontspannen, ook als je niet dagelijks met een mobilhome rijdt.
-        </p>
-        <div class="pill-list">
-          <div class="pill-soft">Tweepersoonsbed</div>
-          <div class="pill-soft">Keuken met koelkast & diepvries</div>
-          <div class="pill-soft">Douche & toilet</div>
-          <div class="pill-soft">Verwarming & warm water</div>
+
+        <div class="list" style="margin-top:14px">
+          <div class="li">
+            <div class="b">🛏️</div>
+            <div><strong>Slapen</strong><span>Tweepersoonsbed — wakker worden met uitzicht.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">🍳</div>
+            <div><strong>Koken</strong><span>Keuken met koelkast & diepvries — klaar voor “simpel & lekker”.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">🚿</div>
+            <div><strong>Douche</strong><span>Badkamer met douche & toilet — vrijheid op elk moment.</span></div>
+          </div>
         </div>
       </div>
 
-      <aside class="info-card">
+      <div class="card">
         <h3>Grote garage voor fietsen</h3>
-        <ul class="info-list">
-          <li>Ruime garage achteraan met plaats voor (elektrische) fietsen.</li>
-          <li>Je fietsen staan droog, veilig en uit het zicht tijdens tussenstops.</li>
-          <li>Ideaal voor meerdaagse fietsroutes in de Ardennen, Alpen, Moezelstreek, ...</li>
-        </ul>
-      </aside>
+        <p>
+          Je fietsen staan droog, veilig en uit het zicht tijdens tussenstops.
+          Perfect voor Ardennen, Moezel, Alpen, … of gewoon een weekend weg.
+        </p>
+
+        <div class="list" style="margin-top:14px">
+          <div class="li">
+            <div class="b">🚲</div>
+            <div><strong>Ruimte</strong><span>Plaats voor (elektrische) fietsen en extra bagage.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">🔒</div>
+            <div><strong>Rust</strong><span>Afsluitbaar, uit het zicht, ideaal voor roadtrip-stops.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">🧭</div>
+            <div><strong>Flex</strong><span>Vandaag bergpas, morgen meer — jij kiest het ritme.</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- GEVOEL -->
-  <section id="gevoel">
-    <h2>Hoe zo’n reis aanvoelt</h2>
-    <div class="two-cols">
-      <div class="section-text">
-        <p>
-          Je vertrekt uit Herentals met een volle bak koffie en een paar basics in de kast. Tegen de avond parkeer je bij een meer of tussen de bergen, zet je de fietsen klaar voor de volgende dag en schuif je de luifel uit.
-        </p>
-        <p>
-          Geen incheckbalie, geen vaste uren. Jij beslist waar je wakker wordt, wanneer je een extra dag blijft en wanneer je weer verder rijdt.
+  <section id="gevoel" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Hoe zo’n reis aanvoelt</h2>
+        <p class="sub">
+          Je vertrekt met koffie in de hand. Tegen de avond sta je stil aan een meer of in de bergen.
+          Luifel uit, stoelen buiten — en morgenvroeg: fietsen.
         </p>
       </div>
-      <div>
-        <div class="gallery">
-          <!-- VERVANG DOOR JE ECHTE FOTO'S -->
-          <img src="img/florium-bed.jpg" alt="Slaapgedeelte met tweepersoonsbed" />
-          <img src="img/florium-garage-fietsen.jpg" alt="Fietsen in de grote garage" />
-          <img src="img/florium-luifel.jpg" alt="Stoelen onder de luifel bij zonsondergang" />
+    </div>
+
+    <div class="card">
+      <div class="list" style="grid-template-columns:1fr;gap:12px">
+        <div class="li">
+          <div class="b">🌞</div>
+          <div><strong>Zon & vrijheid</strong><span>Geen incheckbalie, geen vaste uren. Jij beslist waar je wakker wordt.</span></div>
+        </div>
+        <div class="li">
+          <div class="b">🫶</div>
+          <div><strong>Ontspanning</strong><span>Alles bij de hand: eten, douchen, slapen — zonder stress.</span></div>
+        </div>
+        <div class="li">
+          <div class="b">🏞️</div>
+          <div><strong>Ruimte</strong><span>Meer buiten dan binnen: uitzicht, stilte, en elke dag een nieuwe plek.</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRAKTISCH -->
-  <section id="praktisch">
-    <h2>Praktisch: hoe werkt huren?</h2>
-    <div class="two-cols">
-      <div class="section-text">
-        <p>
-          Alles rond boeking, betaling, verzekering en waarborg loopt via Goboony. Dat betekent: duidelijke voorwaarden, veilige betaling en een goed overzicht van wat inbegrepen is. [web:26][web:30]
-        </p>
-        <p>
-          Op de Goboony-pagina zie je ook de volledige kalender, reviews van andere huurders en alle kleine lettertjes. [web:26][web:37]
-        </p>
+  <section id="praktisch" class="reveal">
+    <div class="section-head">
+      <div>
+        <h2>Praktisch: huren in 3 stappen</h2>
+        <p class="sub">Simpel en duidelijk. Alles loopt via Goboony: voorwaarden, betaling, verzekering en waarborg.</p>
       </div>
-      <aside class="info-card">
-        <h3>In het kort</h3>
-        <ul class="info-list">
-          <li>Je hebt een gewoon rijbewijs B nodig (details op Goboony). [web:39]</li>
-          <li>Je doet een boekingsaanvraag, die bevestigd wordt via het platform. [web:38]</li>
-          <li>Verzekering en waarborg worden geregeld via Goboony. [web:32][web:35]</li>
-          <li>Na de huurperiode wordt de borg volgens de voorwaarden afgehandeld. [web:34]</li>
-        </ul>
-      </aside>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Stap voor stap</h3>
+        <div class="list">
+          <div class="li">
+            <div class="b">🗓️</div>
+            <div><strong>1) Kies je data</strong><span>Bekijk beschikbaarheid en prijs op de Goboony-pagina.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">✅</div>
+            <div><strong>2) Boekingsaanvraag</strong><span>Je aanvraag wordt bevestigd via het platform.</span></div>
+          </div>
+          <div class="li">
+            <div class="b">🧾</div>
+            <div><strong>3) Ophalen & vertrekken</strong><span>Na uitleg ben je weg — op naar zon, vrijheid en ruimte.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Goed om te weten</h3>
+        <p>
+          Rijbewijs B volstaat (check de exacte voorwaarden op Goboony).
+          Reviews, details en “kleine lettertjes” staan daar ook netjes bij.
+        </p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
+            <span class="icon">➜</span> Check voorwaarden & kalender
+          </a>
+          <a class="btn" href="#foto"><span class="icon">📷</span> Naar de foto’s</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="cta-inner">
+  <!-- FOTO -->
+  <section id="foto" class="reveal">
+    <div class="section-head">
       <div>
-        <h2>Nog een paar foto’s bekijken en dan boeken?</h2>
-        <p>
-          Op Goboony vind je alle foto’s, prijzen, reviews en de live kalender. Je kan er eerst een vraag stellen of meteen een boekingsaanvraag doen.
-        </p>
+        <h2>Foto’s</h2>
+        <p class="sub">Klik om te vergroten. Vervang gerust door jouw beste “zon & vrijheid”-shots.</p>
       </div>
-      <a class="btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
-        Naar de Goboony-pagina <span>➜</span>
-      </a>
+    </div>
+
+    <div class="gallery">
+      <div class="g g1" data-lb="img/florium-buiten.jpg" role="button" tabindex="0" aria-label="Open foto buiten">
+        <img src="img/florium-buiten.jpg" alt="Florium buitenaanzicht" />
+      </div>
+      <div class="g g2" data-lb="img/florium-luifel.jpg" role="button" tabindex="0" aria-label="Open foto luifel">
+        <img src="img/florium-luifel.jpg" alt="Stoelen onder de luifel" />
+      </div>
+      <div class="g g3" data-lb="img/florium-interieur.jpg" role="button" tabindex="0" aria-label="Open foto interieur">
+        <img src="img/florium-interieur.jpg" alt="Interieur zithoek en keuken" />
+      </div>
+      <div class="g g4" data-lb="img/florium-bed.jpg" role="button" tabindex="0" aria-label="Open foto bed">
+        <img src="img/florium-bed.jpg" alt="Slaapgedeelte met bed" />
+      </div>
+      <div class="g g5" data-lb="img/florium-garage-fietsen.jpg" role="button" tabindex="0" aria-label="Open foto fietsen in garage">
+        <img src="img/florium-garage-fietsen.jpg" alt="Fietsen in de garage" />
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h3>Voelt het al als vakantie?</h3>
+          <p>Op Goboony zie je live prijzen, beschikbaarheid, reviews en alle details. Je kan eerst een vraag sturen of meteen boeken.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.goboony.be/campers/belgie/antwerpen/herentals/39410" target="_blank" rel="noopener">
+          <span class="icon">🗓️</span> Boek / stel een vraag
+        </a>
+      </div>
     </div>
   </section>
+
+  <footer>
+    <div class="foot">
+      <div>© <span id="year"></span> Florium • Herentals</div>
+      <div>Boekingen, verzekering & waarborg verlopen via Goboony.</div>
+    </div>
+  </footer>
 </main>
 
-<footer>
-  <div>© <span id="year"></span> Florium mobilhome – Herentals.</div>
-  <div>Boekingen en verzekering verlopen via Goboony.</div>
-</footer>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Foto preview">
+    <button class="lb-close" type="button" id="lbClose">Sluiten ✕</button>
+    <img id="lbImg" src="" alt="Vergrote foto" />
+  </div>
+</div>
 
 <script>
+  // year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // reveal on scroll
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add("on");
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+
+  // lightbox
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbClose = document.getElementById("lbClose");
+
+  function openLB(src, alt){
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden","false");
+    lbImg.src = src;
+    lbImg.alt = alt || "Vergrote foto";
+  }
+  function closeLB(){
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden","true");
+    lbImg.src = "";
+  }
+
+  document.querySelectorAll("[data-lb]").forEach(el => {
+    const src = el.getAttribute("data-lb");
+    const img = el.querySelector("img");
+    const alt = img ? img.alt : "";
+    el.addEventListener("click", () => openLB(src, alt));
+    el.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " ") { e.preventDefault(); openLB(src, alt); }
+    });
+  });
+
+  lbClose.addEventListener("click", closeLB);
+  lb.addEventListener("click", (e) => { if(e.target === lb) closeLB(); });
+  window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLB(); });
 </script>
 </body>
 </html>
